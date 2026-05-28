@@ -1,0 +1,1 @@
+export { FooterLinkArrow } from "./FooterLinkArrow";

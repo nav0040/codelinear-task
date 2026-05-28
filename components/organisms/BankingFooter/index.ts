@@ -1,0 +1,1 @@
+export { BankingFooter } from "./BankingFooter";

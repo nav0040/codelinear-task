@@ -1,0 +1,260 @@
+
+.banking-branchless-root {
+  --branchless-heading: #111827;
+  --branchless-body: #4b5563;
+  --branchless-list: #1f2937;
+  --branchless-check: #0158d9;
+  --branchless-copy-w: var(--showcase-copy-w);
+  --branchless-gap: var(--showcase-gap);
+  --branchless-phone-w: var(--showcase-phone-w);
+  position: relative;
+  background-color: #e9f4f9;
+  color: var(--branchless-heading);
+
+  overflow-x: clip;
+  overflow-y: visible;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.banking-showcase-stack .banking-branchless-root {
+  background: transparent;
+  overflow: visible;
+}
+
+.banking-branchless-root::before {
+  content: "7";
+  position: absolute;
+  right: clamp(-16.1rem, -10vw, -18.5rem);
+  top: clamp(-4rem, -14vw, -6rem);
+  z-index: 1;
+  display: block;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(40rem, 100vw, 98rem);
+  font-weight: 700;
+  line-height: 0.76;
+  letter-spacing: 0;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(59, 130, 246, 0.28);
+  paint-order: stroke fill;
+  transform: translateY(0);
+  pointer-events: none;
+  user-select: none;
+}
+
+@supports not (-webkit-text-stroke: 1px) {
+  .banking-branchless-root::before {
+    color: rgba(59, 130, 246, 0.12);
+  }
+}
+
+.banking-branchless-shell {
+  position: relative;
+  z-index: 2;
+  padding-block: 4rem 4.5rem;
+}
+
+@media (min-width: 640px) {
+  .banking-branchless-shell {
+    padding-block: 5rem 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banking-branchless-shell {
+    padding-block: 5.5rem 6.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .banking-branchless-shell {
+    padding-block: 6rem 7rem;
+  }
+}
+
+.banking-branchless-grid {
+  display: grid;
+  align-items: center;
+  gap: 3rem;
+}
+
+.banking-branchless-visual {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.banking-branchless-phone-wrap {
+  width: min(269px, 72vw);
+  max-width: var(--branchless-phone-w);
+  line-height: 0;
+  filter: drop-shadow(0 22px 44px rgba(15, 23, 42, 0.12));
+}
+
+.banking-branchless-phone-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.banking-branchless-content {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  text-align: left;
+  isolation: isolate;
+}
+
+.banking-branchless-headline {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--branchless-heading);
+}
+
+.banking-branchless-body {
+  margin: 1rem 0 0;
+  font-size: var(--showcase-body-size);
+  font-weight: 400;
+  line-height: var(--showcase-body-lh);
+  color: var(--branchless-body);
+  max-width: 38ch;
+}
+
+.banking-branchless-body-line {
+  display: block;
+}
+
+.banking-branchless-checklist {
+  list-style: none;
+  margin: 2.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.banking-branchless-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.banking-branchless-check-bullet {
+  display: flex;
+  width: 30px;
+  height: 32px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  line-height: 0;
+}
+
+.banking-branchless-check-icon {
+  display: block;
+  width: 30px;
+  height: 32px;
+}
+
+.banking-branchless-check-text {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--showcase-body-size);
+  font-weight: var(--showcase-list-weight);
+  line-height: 1.45;
+  color: var(--showcase-list-color);
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 1024px) {
+
+  .banking-branchless-grid {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: clamp(520px, 42vw, 560px);
+  }
+
+  .banking-branchless-visual {
+    position: absolute;
+    top: 50%;
+    right: calc(var(--branchless-copy-w) + var(--branchless-gap));
+    z-index: 2;
+    display: block;
+    width: var(--branchless-phone-w);
+    transform: translateY(-50%);
+  }
+
+  .banking-branchless-phone-wrap {
+    width: var(--branchless-phone-w);
+  }
+
+  .banking-branchless-content {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 2;
+    width: var(--branchless-copy-w);
+    max-width: 500px;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-50%);
+  }
+
+  .banking-branchless-headline {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    max-width: none;
+  }
+
+  .banking-branchless-body {
+    margin-top: 1rem;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 42ch;
+  }
+
+  .banking-branchless-checklist {
+    margin-top: 2.5rem;
+    gap: 1.25rem;
+    max-width: 480px;
+  }
+
+  .banking-branchless-check-text {
+    font-size: var(--showcase-list-size);
+    font-weight: var(--showcase-list-weight);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .banking-branchless-content::before {
+    right: -3.5rem;
+    font-size: 24rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .banking-branchless-grid {
+    grid-template-areas:
+      "visual"
+      "content";
+  }
+
+  .banking-branchless-visual {
+    grid-area: visual;
+  }
+
+  .banking-branchless-content {
+    grid-area: content;
+    max-width: none;
+  }
+}

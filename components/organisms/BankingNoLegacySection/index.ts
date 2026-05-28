@@ -1,0 +1,1 @@
+export { BankingNoLegacySection } from "./BankingNoLegacySection";

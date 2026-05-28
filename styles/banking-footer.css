@@ -1,0 +1,366 @@
+
+footer.banking-footer-root {
+  --footer-bg: #020b12;
+  --footer-text: #ffffff;
+  --footer-body: #9ca3af;
+  --footer-legal: #6b7280;
+  --footer-accent: #00b4fd;
+  --footer-logo-top: #00d1ff;
+  --footer-logo-mid: #00a3ff;
+  --footer-logo-bottom: #0057ff;
+  --footer-shell-max: var(--site-shell-max);
+  --footer-gutter: var(--site-gutter);
+  --footer-col-gap: clamp(1.5rem, 2.5vw, 2.75rem);
+  --footer-title-size: 1rem;
+  --footer-title-mb: 0.75rem;
+  --footer-body-size: 0.9375rem;
+  --footer-body-lh: 1.5;
+  --footer-section-gap: 3rem;
+  --footer-legal-gap: 3rem;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  width: 100%;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  overflow: hidden;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+footer.banking-footer-root *,
+footer.banking-footer-root *::before,
+footer.banking-footer-root *::after {
+  box-sizing: border-box;
+}
+
+footer.banking-footer-root h3,
+footer.banking-footer-root p,
+footer.banking-footer-root ul,
+footer.banking-footer-root li {
+  margin: 0;
+  padding: 0;
+}
+
+footer.banking-footer-root ul {
+  list-style: none;
+}
+
+footer.banking-footer-root a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.banking-footer-glow {
+  position: absolute;
+  left: -8%;
+  bottom: -42%;
+  z-index: 0;
+  width: min(70vw, 720px);
+  height: min(70vw, 720px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 42% 58%,
+    rgba(0, 174, 239, 0.14) 0%,
+    rgba(0, 87, 255, 0.06) 42%,
+    transparent 70%
+  );
+  filter: blur(64px);
+  pointer-events: none;
+}
+
+.banking-footer-shell {
+  position: relative;
+  z-index: 1;
+  padding-block: 4.5rem 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .banking-footer-shell {
+    padding-block: 5.5rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banking-footer-shell {
+    padding-block: 6rem 3.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .banking-footer-shell {
+    padding-block: 6.5rem 3.5rem;
+  }
+}
+
+.banking-footer-main {
+  display: grid;
+  gap: 2.75rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .banking-footer-main {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: clamp(2rem, 3vw, 3rem);
+    align-items: start;
+  }
+}
+
+.banking-footer-brand {
+  display: flex;
+  align-items: flex-start;
+  align-self: start;
+  width: max-content;
+  max-width: 100%;
+  line-height: 0.82;
+}
+
+footer.banking-footer-root .banking-footer-logo {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: clamp(8rem, 24vw, 12.5rem);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.045em;
+  line-height: 0.8;
+  text-decoration: none;
+  background: linear-gradient(
+    135deg,
+    var(--footer-logo-top) 0%,
+    var(--footer-logo-mid) 48%,
+    var(--footer-logo-bottom) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+footer.banking-footer-root .banking-footer-logo:focus-visible {
+  outline: 2px solid var(--footer-accent);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  footer.banking-footer-root .banking-footer-logo {
+    -webkit-text-fill-color: var(--footer-accent);
+    color: var(--footer-accent);
+  }
+}
+
+@media (min-width: 1024px) {
+  footer.banking-footer-root .banking-footer-logo {
+    font-size: clamp(14rem, 17vw, 20rem);
+    letter-spacing: -0.05em;
+  }
+}
+
+@media (min-width: 1280px) {
+  footer.banking-footer-root .banking-footer-logo {
+    font-size: 22rem;
+  }
+}
+
+.banking-footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.banking-footer-grid {
+  display: grid;
+  width: 100%;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 640px) {
+  .banking-footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--footer-col-gap);
+    row-gap: 0;
+  }
+}
+
+.banking-footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.banking-footer-grid--offices {
+  margin: 0;
+}
+
+.banking-footer-grid--links {
+  margin-top: 2.25rem;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .banking-footer-grid--links {
+    margin-top: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banking-footer-grid--links {
+    margin-top: var(--footer-section-gap);
+  }
+}
+
+footer.banking-footer-root .banking-footer-col-title {
+  margin: 0 0 var(--footer-title-mb);
+  font-size: var(--footer-title-size);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--footer-text);
+}
+
+footer.banking-footer-root .banking-footer-body-line {
+  margin: 0;
+  font-size: var(--footer-body-size);
+  font-weight: 400;
+  line-height: var(--footer-body-lh);
+  letter-spacing: 0;
+  color: var(--footer-body);
+}
+
+.banking-footer-address {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.banking-footer-links {
+  display: grid;
+  grid-template-columns: max-content auto;
+  column-gap: 2.625rem;
+  row-gap: 0.625rem;
+  width: max-content;
+  max-width: 100%;
+}
+
+footer.banking-footer-root .banking-footer-links li {
+  display: contents;
+}
+
+footer.banking-footer-root .banking-footer-link {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-items: start;
+  width: auto;
+  max-width: 100%;
+  font-size: var(--footer-body-size);
+  font-weight: 400;
+  line-height: var(--footer-body-lh);
+  letter-spacing: 0;
+  color: var(--footer-body);
+  text-decoration: none;
+}
+
+footer.banking-footer-root .banking-footer-link:focus-visible {
+  outline: 2px solid var(--footer-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.banking-footer-link-label,
+.banking-footer-link-text {
+  grid-column: 1;
+  text-align: left;
+}
+
+.banking-footer-link-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.banking-footer-link-label--continued {
+  display: block;
+}
+
+footer.banking-footer-root .banking-footer-link-arrow {
+  grid-column: 2;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 15px;
+  margin-top: 0.125em;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+footer.banking-footer-root .banking-footer-link-arrow-icon {
+  display: block;
+  width: 14px;
+  height: 15px;
+}
+
+footer.banking-footer-root .banking-footer-link:hover .banking-footer-link-arrow {
+  transform: translateX(3px);
+}
+
+footer.banking-footer-root .banking-footer-legal {
+  margin: 2.5rem 0 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-align: left;
+  color: var(--footer-legal);
+}
+
+@media (min-width: 640px) {
+  footer.banking-footer-root .banking-footer-legal {
+    margin-top: 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer.banking-footer-root .banking-footer-legal {
+    margin-top: var(--footer-legal-gap);
+    max-width: min(100%, 52rem);
+  }
+}
+
+@media (max-width: 1023px) {
+  .banking-footer-main {
+    grid-template-areas:
+      "brand"
+      "content";
+  }
+
+  .banking-footer-brand {
+    grid-area: brand;
+  }
+
+  .banking-footer-content {
+    grid-area: content;
+  }
+
+  .banking-footer-grid {
+    row-gap: 2rem;
+  }
+
+  .banking-footer-grid--links {
+    margin-top: 2.25rem;
+  }
+
+  footer.banking-footer-root .banking-footer-legal {
+    margin-top: 2.5rem;
+  }
+}

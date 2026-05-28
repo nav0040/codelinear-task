@@ -1,0 +1,1 @@
+export { BankingKycBenefitsSection } from "./BankingKycBenefitsSection";

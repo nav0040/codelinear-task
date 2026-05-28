@@ -1,0 +1,371 @@
+
+.banking-insights-root {
+  --insights-bg: #01080e;
+  --insights-accent: #00aeff;
+  --insights-label: #4a708b;
+  --insights-text: #ffffff;
+  --insights-muted: #6b828d;
+  --insights-card: #05111a;
+  --insights-card-border: rgba(255, 255, 255, 0.06);
+  --insights-board-gap: 20px;
+  --insights-featured-visual: 328px;
+  --insights-spark-icon: 108px;
+  --insights-spark-gap: 40px;
+  --insights-board-max: 704px;
+  --insights-duo-card-h: 328px;
+  --insights-visual-bg: linear-gradient(165deg, #0c1f38 0%, #081a33 100%);
+  position: relative;
+  background-color: var(--insights-bg);
+  color: var(--insights-text);
+  overflow: hidden;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.banking-insights-glow {
+  position: absolute;
+  left: 12%;
+  top: 38%;
+  z-index: 0;
+  width: min(55vw, 620px);
+  height: min(45vw, 520px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(14, 165, 233, 0.18) 0%,
+    rgba(37, 99, 235, 0.08) 40%,
+    transparent 68%
+  );
+  filter: blur(52px);
+  pointer-events: none;
+}
+
+.banking-insights-shell {
+  position: relative;
+  z-index: 1;
+  padding-block: 4.5rem 4rem;
+}
+
+@media (min-width: 640px) {
+  .banking-insights-shell {
+    padding-block: 5.5rem 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banking-insights-shell {
+    padding-block: 6rem 5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .banking-insights-shell {
+    padding-block: 6.5rem 5.5rem;
+  }
+}
+
+.banking-insights-grid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .banking-insights-grid {
+    grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
+    gap: clamp(2.5rem, 4.5vw, 4.5rem);
+    align-items: start;
+  }
+}
+
+.banking-insights-board-col {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .banking-insights-board-col {
+    max-width: var(--insights-board-max);
+    justify-self: end;
+  }
+}
+
+.banking-insights-intro {
+  max-width: 520px;
+}
+
+@media (min-width: 1024px) {
+  .banking-insights-intro {
+    padding-top: 0.25rem;
+    max-width: 480px;
+  }
+}
+
+.banking-insights-headline {
+  margin: 0;
+  font-size: clamp(1.875rem, 3.8vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--insights-text);
+}
+
+.banking-insights-headline-line {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .banking-insights-headline {
+    font-size: 40px;
+    line-height: 1.12;
+    letter-spacing: -0.028em;
+  }
+}
+
+.banking-insights-intro-cta {
+  margin-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .banking-insights-intro-cta {
+    margin-top: 2.25rem;
+  }
+}
+
+.banking-insights-intro-cta .banking-btn-outline-cta {
+  min-height: 44px;
+  padding-inline: 1.75rem;
+  border-radius: 10px;
+  border-color: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.banking-insights-intro-cta .banking-btn-outline-cta:hover,
+.banking-insights-card-actions .banking-btn-outline-cta:hover {
+  background: #ebf2f7;
+  border-color: rgba(235, 242, 247, 0.6);
+  color: #1a4dbe;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 10px 36px rgba(0, 163, 255, 0.22),
+    0 0 0 1px rgba(235, 242, 247, 0.12);
+}
+
+.banking-insights-intro-cta .banking-btn-outline-cta:hover::before,
+.banking-insights-card-actions .banking-btn-outline-cta:hover::before {
+  transform: translateX(120%);
+}
+
+.banking-insights-board {
+  display: flex;
+  flex-direction: column;
+  gap: var(--insights-board-gap);
+  width: 100%;
+  max-width: var(--insights-board-max);
+}
+
+.banking-insights-featured {
+  width: 100%;
+  border-radius: 22px;
+  background: var(--insights-card);
+  border: 1px solid var(--insights-card-border);
+  box-sizing: border-box;
+}
+
+.banking-insights-featured-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .banking-insights-featured-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 1.75rem;
+  }
+}
+
+.banking-insights-featured-visual.banking-insights-vector-panel,
+.banking-insights-featured-visual {
+  display: grid;
+  grid-template-columns: repeat(2, var(--insights-spark-icon));
+  grid-template-rows: repeat(2, var(--insights-spark-icon));
+  place-content: center;
+  gap: var(--insights-spark-gap);
+  flex-shrink: 0;
+  width: 100%;
+  max-width: var(--insights-featured-visual);
+  aspect-ratio: 1;
+  margin-inline: auto;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background: var(--insights-visual-bg);
+}
+
+@media (min-width: 640px) {
+  .banking-insights-featured-visual.banking-insights-vector-panel,
+  .banking-insights-featured-visual {
+    width: var(--insights-featured-visual);
+    height: var(--insights-featured-visual);
+    max-width: none;
+    margin-inline: 0;
+    border-radius: 16px;
+  }
+}
+
+.banking-insights-featured-visual .banking-insights-vector-icon {
+  display: block;
+  width: var(--insights-spark-icon);
+  height: var(--insights-spark-icon);
+  object-fit: contain;
+}
+
+.banking-insights-featured-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .banking-insights-featured-body {
+    min-height: var(--insights-featured-visual);
+    align-self: stretch;
+  }
+}
+
+.banking-insights-category {
+  margin: 0;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--insights-label);
+}
+
+.banking-insights-title {
+  margin: 0.875rem 0 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--insights-text);
+}
+
+@media (min-width: 1024px) {
+  .banking-insights-featured .banking-insights-title {
+    font-size: 24px;
+    line-height: 1.28;
+    max-width: 360px;
+  }
+
+  .banking-insights-card .banking-insights-title {
+    font-size: 24px;
+    line-height: 1.28;
+  }
+}
+
+.banking-insights-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0.75rem 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--insights-muted);
+}
+
+.banking-insights-meta-date {
+  white-space: nowrap;
+}
+
+.banking-insights-card-actions {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.banking-insights-featured .banking-insights-card-actions {
+  padding-top: 1.25rem;
+}
+
+.banking-insights-card-actions .banking-btn-outline-cta {
+  min-height: 44px;
+  border-radius: 12px;
+  border-color: rgba(107, 130, 141, 0.65);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+}
+
+.banking-insights-card-actions .banking-btn-outline-cta--block {
+  width: 100%;
+  min-height: 46px;
+}
+
+.banking-insights-duo {
+  display: grid;
+  gap: var(--insights-board-gap);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .banking-insights-duo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+  }
+}
+
+.banking-insights-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  padding: 2rem 1.75rem 1.75rem;
+  border-radius: 22px;
+  background: var(--insights-card);
+  border: 1px solid var(--insights-card-border);
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .banking-insights-card {
+    min-height: var(--insights-duo-card-h);
+    padding: 2rem 1.75rem 1.75rem;
+  }
+}
+
+.banking-insights-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .banking-insights-footer {
+    margin-top: 1.5rem;
+    max-width: var(--insights-board-max);
+    margin-left: auto;
+  }
+}
+
+.banking-insights-footer .banking-learn-more {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--insights-accent);
+}

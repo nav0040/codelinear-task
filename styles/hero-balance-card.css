@@ -1,0 +1,222 @@
+
+.hero-balance-float {
+  position: absolute;
+  z-index: 20;
+  top: 6px;
+  right: -52px;
+  width: min(216px, 68vw);
+}
+
+@media (max-width: 1023px) {
+  .hero-balance-float {
+    top: 4px;
+    right: 0;
+    width: min(200px, 52vw);
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-balance-float {
+    top: 0;
+    right: -4px;
+    width: min(188px, 54vw);
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-balance-float {
+    top: 14px;
+    right: -64px;
+    width: 232px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-balance-float {
+    top: 18px;
+    right: -106px;
+    width: 244px;
+  }
+}
+
+.hero-balance-shell {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  background: rgba(251, 247, 244, 0.5);
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.hero-balance-panel {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: #fbf7f4;
+  padding: 14px 14px 12px;
+  box-shadow:
+    0 24px 48px rgba(8, 18, 42, 0.12),
+    0 8px 20px rgba(8, 18, 42, 0.06);
+}
+
+.hero-balance-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.hero-balance-panel__profile {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-balance-panel__avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 9999px;
+}
+
+.hero-balance-panel__name {
+  margin: 0;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #001b44;
+}
+
+.hero-balance-panel__greeting {
+  margin: 2px 0 0;
+  font-size: 9px;
+  line-height: 1.3;
+  color: #6b7280;
+}
+
+.hero-balance-panel__bell {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #64748b;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.hero-balance-panel__bell:hover {
+  color: #001b44;
+}
+
+.hero-balance-panel__bell-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.hero-balance-panel__label {
+  margin: 0;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #6b7280;
+}
+
+.hero-balance-panel__balance {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.hero-balance-panel__amount {
+  margin: 4px 0 0;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #081f69;
+}
+
+.hero-balance-panel__currency {
+  font-size: 20px;
+  font-weight: 700;
+  color: #081f69;
+}
+
+.hero-balance-panel__actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-balance-panel__action {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-balance-panel__action-btn {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-balance-panel__action-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #001b44;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.hero-balance-panel__action-icon-svg {
+  width: 15px;
+  height: 15px;
+}
+
+.hero-balance-panel__action-btn:hover .hero-balance-panel__action-icon {
+  color: #001b44;
+}
+
+.hero-balance-panel__action-label {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #001b44;
+}

@@ -1,0 +1,332 @@
+
+.banking-core-root {
+  --core-bg: #020617;
+  --core-text: #ffffff;
+  --core-muted: #94a3b8;
+  --core-accent: #38bdf8;
+  --core-stroke: rgb(1, 30, 68);
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--core-bg);
+  background-image: linear-gradient(
+    180deg,
+    #050508 0%,
+    #070b14 42%,
+    #020617 100%
+  );
+  color: var(--core-text);
+  overflow: hidden;
+  isolation: isolate;
+  scroll-margin-top: 5rem;
+}
+
+.banking-core-root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse 48% 42% at 78% 62%,
+    rgba(37, 99, 235, 0.1) 0%,
+    transparent 58%
+  );
+  pointer-events: none;
+}
+
+.banking-core-watermark {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.banking-core-watermark-text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: block;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(14rem, 38vw, 34rem);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--core-stroke);
+  paint-order: stroke fill;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.88) 32%,
+    rgba(0, 0, 0, 0.42) 68%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.88) 32%,
+    rgba(0, 0, 0, 0.42) 68%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transform: translate(-0.14em, -50%);
+  user-select: none;
+}
+
+@supports not (-webkit-text-stroke: 1px) {
+  .banking-core-watermark-text {
+    color: rgba(1, 30, 68, 0.12);
+  }
+}
+
+@media (min-width: 1024px) {
+  .banking-core-watermark-text {
+    font-size: clamp(20rem, 34vw, 32rem);
+    letter-spacing: 0.02em;
+    -webkit-text-stroke: 1px rgb(1, 30, 68);
+    transform: translate(-0.14em, -50%);
+  }
+}
+
+@media (min-width: 1440px) {
+  .banking-core-watermark-text {
+    font-size: 34rem;
+    letter-spacing: 0.022em;
+    transform: translate(-0.14em, -50%);
+  }
+}
+
+.banking-core-layout {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 5.5rem;
+}
+
+@media (min-width: 1024px) {
+  .banking-core-layout {
+    display: grid;
+    grid-template-columns: minmax(440px, 50fr) minmax(0, 50fr);
+    align-items: center;
+    column-gap: 2rem;
+    max-width: var(--site-shell-max);
+    margin-inline: auto;
+    padding: 6.5rem var(--site-gutter) 4rem;
+  }
+}
+
+.banking-core-content-col {
+  position: relative;
+  z-index: 4;
+  flex-shrink: 0;
+  width: 100%;
+  padding: clamp(4.5rem, 12vw, 6.5rem) var(--site-gutter) 2rem;
+}
+
+@media (min-width: 1024px) {
+  .banking-core-content-col {
+    width: auto;
+    max-width: none;
+    padding: 4.5rem 0;
+    grid-column: 1;
+    overflow: visible;
+  }
+}
+
+.banking-core-copy {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  min-width: 0;
+  overflow: visible;
+}
+
+.banking-core-headline {
+  margin: 0;
+  font-size: clamp(2.25rem, 4.2vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--core-text);
+}
+
+.banking-core-headline-line1 {
+  display: block;
+  color: #ffffff;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.banking-core-headline-line2 {
+  display: block;
+  color: #ffffff;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 1024px) {
+  .banking-core-headline-line1,
+  .banking-core-headline-line2 {
+    white-space: nowrap;
+  }
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .banking-core-headline-line2 {
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.88) 42%,
+      rgba(255, 255, 255, 0.48) 78%,
+      rgba(255, 255, 255, 0.28) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banking-core-headline {
+    font-size: 64px;
+    line-height: 1.08;
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .banking-core-headline {
+    font-size: 72px;
+    line-height: 1.06;
+  }
+}
+
+.banking-core-subheadline {
+  margin: 1.5rem 0 0;
+  max-width: 420px;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--core-muted);
+}
+
+@media (min-width: 1024px) {
+  .banking-core-subheadline {
+    margin-top: 1.5rem;
+    max-width: 440px;
+  }
+}
+
+.banking-core-cta-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .banking-core-cta-stack {
+    margin-top: 2.5rem;
+    gap: 1.375rem;
+  }
+}
+
+.banking-core-visual-col {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  min-height: clamp(320px, 52vw, 520px);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .banking-core-visual-col {
+    grid-column: 2;
+    min-height: 100dvh;
+    height: 100%;
+
+    margin-right: calc(50% - 50vw);
+  }
+}
+
+.banking-dashboard-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.banking-dashboard-clip {
+  position: absolute;
+  top: 50%;
+  right:32%;
+  width: min(94vw, 480px);
+  transform: translateY(-50%);
+  transform-origin: center right;
+}
+
+@media (min-width: 768px) {
+  .banking-dashboard-clip {
+    width: min(50vw, 540px);
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .banking-dashboard-clip {
+    width: min(46vw, 620px);
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 1280px) {
+  .banking-dashboard-clip {
+    width: min(44vw, 680px);
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 1440px) {
+  .banking-dashboard-clip {
+    width: 720px;
+    transform: translateY(-50%);
+  }
+}
+
+.banking-dashboard-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(68vh, 560px);
+  object-fit: contain;
+  object-position: center right;
+  filter: drop-shadow(0 0 36px rgba(59, 130, 246, 0.16));
+}
+
+@media (max-width: 1023px) {
+  .banking-core-watermark-text {
+    font-size: clamp(11rem, 52vw, 16rem);
+    transform: translate(-0.14em, -48%);
+  }
+
+  .banking-dashboard-clip {
+    left: 50%;
+    right: auto;
+    width: min(96vw, 460px);
+    transform: translate(-50%, -50%);
+  }
+
+  .banking-dashboard-image {
+    max-height: 420px;
+  }
+}

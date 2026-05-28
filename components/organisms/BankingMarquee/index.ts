@@ -1,0 +1,1 @@
+export { BankingMarquee } from "./BankingMarquee";

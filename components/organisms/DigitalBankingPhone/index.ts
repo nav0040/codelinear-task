@@ -1,0 +1,1 @@
+export { DigitalBankingPhone } from "./DigitalBankingPhone";

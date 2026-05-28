@@ -1,0 +1,193 @@
+
+.banking-showcase-stack,
+.banking-digital-root,
+.banking-legacy-root,
+.banking-branchless-root {
+  --showcase-copy-w: min(500px, 42vw);
+  --showcase-gap: clamp(3.5rem, 5vw, 5.25rem);
+  --showcase-phone-w: min(269px, 72vw);
+
+  --showcase-title-size: 1.25rem;
+  --showcase-title-weight: 700;
+  --showcase-body-size: 1.125rem;
+  --showcase-body-lh: 1.6;
+  --showcase-list-size: 1rem;
+  --showcase-list-weight: 600;
+  --showcase-list-color: #374151;
+}
+
+.banking-showcase-stack {
+  --showcase-bg: #e9f4f9;
+  --showcase-n7-stroke: rgba(59, 130, 246, 0.28);
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+  overflow-y: visible;
+  background: linear-gradient(180deg, #eef6fb 0%, var(--showcase-bg) 28%, var(--showcase-bg) 100%);
+  color: #111827;
+}
+
+.banking-showcase-vector {
+  position: absolute;
+  left: 0;
+  top: var(--showcase-vector-top, 0px);
+  bottom: 0;
+  z-index: 1;
+  width: min(46vw, 560px);
+  height: calc(100% - var(--showcase-vector-top, 0px));
+  pointer-events: none;
+  opacity: 0.5;
+
+  transform: translate(-10%, -18%);
+}
+
+@media (min-width: 1024px) {
+  .banking-showcase-vector {
+    width: min(34vw, 640px);
+    transform: translate(-6%, -14%);
+  }
+}
+
+.banking-showcase-vector-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left bottom;
+}
+
+.banking-showcase-n7 {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.banking-showcase-n7-text {
+  position: absolute;
+  left: 54%;
+  top: 52%;
+  display: block;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(11rem, 30vw, 26rem);
+  font-weight: 700;
+  line-height: 0.76;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--showcase-n7-stroke);
+  paint-order: stroke fill;
+  transform: translate(-52%, -50%);
+  user-select: none;
+}
+
+@supports not (-webkit-text-stroke: 1px) {
+  .banking-showcase-n7-text {
+    color: rgba(59, 130, 246, 0.14);
+  }
+}
+
+@media (max-width: 639px) {
+  .banking-showcase-stack,
+  .banking-digital-root,
+  .banking-legacy-root,
+  .banking-branchless-root {
+    --showcase-gap: clamp(2rem, 6vw, 2.75rem);
+    --showcase-phone-w: min(240px, 68vw);
+    --showcase-title-size: 1.125rem;
+    --showcase-body-size: 1rem;
+    --showcase-list-size: 0.9375rem;
+  }
+
+  .banking-showcase-vector {
+    width: min(72vw, 320px);
+    opacity: 0.35;
+    transform: translate(-8%, -12%);
+  }
+
+  .banking-showcase-n7-text {
+    font-size: clamp(7rem, 42vw, 11rem);
+    left: 50%;
+    top: 58%;
+    opacity: 0.9;
+    transform: translate(-48%, -50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .banking-showcase-n7-text {
+    font-size: clamp(14rem, 32vw, 28rem);
+    top: 48%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banking-showcase-n7-text {
+    top: 34%;
+    left: 50%;
+    font-size: clamp(17rem, 28vw, 30rem);
+    letter-spacing: 0.06em;
+    transform: translate(-52%, -50%);
+  }
+}
+
+@media (min-width: 1280px) {
+  .banking-showcase-n7-text {
+    top: 36%;
+    font-size: 32rem;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.banking-showcase-stack .banking-digital-root,
+.banking-showcase-stack .banking-legacy-root,
+.banking-showcase-stack .banking-branchless-root {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  overflow: visible;
+}
+
+.banking-showcase-stack .banking-digital-shell {
+  padding-block: clamp(4rem, 6vw, 5.5rem) 2.75rem;
+}
+
+.banking-showcase-stack .banking-legacy-shell {
+  padding-block: 2.75rem;
+}
+
+.banking-showcase-stack .banking-branchless-shell {
+  padding-block: 2.75rem clamp(4.5rem, 7vw, 6.5rem);
+}
+
+@media (min-width: 640px) {
+  .banking-showcase-stack .banking-digital-shell {
+    padding-block: clamp(5rem, 7vw, 6rem) 3rem;
+  }
+
+  .banking-showcase-stack .banking-legacy-shell,
+  .banking-showcase-stack .banking-branchless-shell {
+    padding-block: 3.25rem;
+  }
+
+  .banking-showcase-stack .banking-branchless-shell {
+    padding-bottom: clamp(5rem, 8vw, 7rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .banking-showcase-stack .banking-digital-shell {
+    padding-block: 6rem 3.25rem;
+  }
+
+  .banking-showcase-stack .banking-legacy-shell {
+    padding-block: 3.5rem;
+  }
+
+  .banking-showcase-stack .banking-branchless-shell {
+    padding-block: 3.5rem 7rem;
+  }
+}
+

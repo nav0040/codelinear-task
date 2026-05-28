@@ -1,0 +1,23 @@
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+  min-width: 320px;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 639px) {
+  .banking-btn-primary,
+  .banking-btn-outline-cta,
+  .banking-features-cta {
+    min-height: 48px;
+  }
+}

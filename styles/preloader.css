@@ -1,0 +1,292 @@
+
+.preloader {
+  --preloader-bg-deep: #020617;
+  --preloader-text: #e8eaed;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--preloader-bg-deep);
+  color: var(--preloader-text);
+  will-change: opacity, filter, transform;
+}
+
+.preloader__atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.preloader__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 78% 62% at 58% 38%, rgba(30, 64, 175, 0.34) 0%, transparent 58%),
+    radial-gradient(ellipse 52% 42% at 82% 58%, rgba(14, 165, 233, 0.16) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 20% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 52%),
+    radial-gradient(ellipse 100% 90% at 50% 100%, rgba(0, 0, 0, 0.94) 0%, transparent 72%),
+    linear-gradient(180deg, #030308 0%, #060a14 38%, #020617 100%);
+}
+
+.preloader__bg-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.preloader__fog {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  will-change: transform, opacity;
+}
+
+.preloader__fog--a {
+  width: min(560px, 75vw);
+  height: min(420px, 55vh);
+  top: 18%;
+  left: 12%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, transparent 68%);
+}
+
+.preloader__fog--b {
+  width: min(480px, 65vw);
+  height: min(380px, 50vh);
+  bottom: 8%;
+  right: 6%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.14) 0%, transparent 70%);
+}
+
+.preloader__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 85% 75% at 50% 50%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+.preloader__hero-morph-glow {
+  position: absolute;
+  width: min(640px, 58vw);
+  height: min(640px, 58vw);
+  top: 18%;
+  right: 4%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(37, 99, 235, 0.48) 0%,
+    rgba(30, 58, 138, 0.2) 40%,
+    transparent 68%
+  );
+  filter: blur(64px);
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform, opacity;
+}
+
+.preloader__watermark-wrap {
+  position: absolute;
+  inset: -8% -12%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.preloader__watermark {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(3.5rem, 26vw, 14rem);
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  text-transform: lowercase;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(1, 30, 68, 0.9);
+  paint-order: stroke fill;
+  opacity: 0.16;
+  user-select: none;
+  transform: translateY(6%) scale(1.08);
+  will-change: transform, opacity;
+}
+
+@media (min-width: 768px) {
+  .preloader__watermark {
+    opacity: 0.13;
+  }
+}
+
+.preloader__streams {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.preloader__streams-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.preloader__particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.preloader__particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(186, 230, 253, 0.85);
+  filter: blur(2px);
+  will-change: transform, opacity;
+}
+
+.preloader__stage {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.75rem, 5vh, 2.75rem);
+  padding-inline: 1.25rem;
+}
+
+.preloader__core {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.preloader__core-bloom {
+  position: absolute;
+  inset: -35%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.45) 0%,
+    rgba(37, 99, 235, 0.12) 50%,
+    transparent 72%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+.preloader__core-svg {
+  position: relative;
+  z-index: 1;
+  width: clamp(140px, 32vw, 200px);
+  height: clamp(140px, 32vw, 200px);
+}
+
+.preloader__core-brand {
+  margin: 0;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: lowercase;
+  color: rgba(186, 230, 253, 0.88);
+}
+
+.preloader__status {
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader__status-line {
+  margin: 0;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.6875rem, 2vw, 0.8125rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(148, 163, 184, 0.92);
+  white-space: nowrap;
+  will-change: opacity, filter, transform;
+}
+
+@media (max-width: 480px) {
+  .preloader__status-line {
+    letter-spacing: 0.12em;
+    font-size: 0.625rem;
+    white-space: normal;
+    max-width: 16rem;
+    line-height: 1.45;
+  }
+}
+
+.preloader__sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 8;
+  background: linear-gradient(
+    108deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 26%,
+    rgba(186, 230, 253, 0.2) 46%,
+    rgba(255, 255, 255, 0.08) 56%,
+    transparent 76%
+  );
+  filter: blur(0.5px);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.preloader__sweep-bloom {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 60% 40% at 50% 50%,
+    rgba(147, 197, 253, 0.18) 0%,
+    transparent 70%
+  );
+  will-change: opacity, transform;
+}
+
+.preloader__sweep-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(186, 230, 253, 0.06) 0%,
+    rgba(37, 99, 235, 0.04) 50%,
+    transparent 100%
+  );
+}
+
+.preloader-gate__content {
+  min-height: 100%;
+}
+
+.preloader-gate__content--loading {
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+}

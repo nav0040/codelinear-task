@@ -1,0 +1,1 @@
+export { BankingLandingTemplate } from "./BankingLandingTemplate";

@@ -1,0 +1,380 @@
+
+.banking-digital-root {
+  --digital-heading: #111827;
+  --digital-body: #4b5563;
+  --digital-list: #1f2937;
+  --digital-accent: #0158d9;
+  --digital-phone-w: var(--showcase-phone-w);
+  --digital-gap: var(--showcase-gap);
+  --showcase-vector-top: 0px;
+  position: relative;
+  background-color: #e9f4f9;
+  color: var(--digital-heading);
+  overflow: visible;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.banking-showcase-stack .banking-digital-root {
+  background: transparent;
+  overflow: visible;
+}
+
+.banking-digital-shell {
+  position: relative;
+  z-index: 2;
+  padding-block: 4rem 4.5rem;
+  overflow: visible;
+}
+
+.banking-digital-n7 {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.banking-digital-n7-svg {
+  position: absolute;
+  left: 52%;
+  top: -0.5rem;
+  display: block;
+  width: min(100vw, 1280px);
+  height: auto;
+  transform: translate(-50%, 0);
+  overflow: visible;
+}
+
+@media (min-width: 640px) {
+  .banking-digital-shell {
+    padding-block: 5rem 5.5rem;
+  }
+
+  .banking-digital-headline {
+    font-size: 2.25rem;
+  }
+
+  .banking-digital-subheadline {
+    font-size: 1.0625rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banking-digital-shell {
+    padding-block: 5.5rem 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .banking-digital-shell {
+    padding-block: 6rem 6.5rem;
+  }
+}
+
+.banking-digital-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  align-items: center;
+  gap: 3rem;
+}
+
+.banking-digital-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  text-align: left;
+}
+
+.banking-digital-headline {
+  margin: 0;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--digital-heading);
+}
+
+.banking-digital-headline-line {
+  display: block;
+}
+
+.banking-digital-subheadline {
+  margin: 1.25rem 0 0;
+  max-width: 36ch;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--digital-body);
+}
+
+.banking-digital-subheadline-line {
+  display: block;
+}
+
+.banking-digital-cta-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.banking-digital-learn-more.banking-learn-more {
+  color: var(--digital-accent);
+}
+
+.banking-digital-learn-more.banking-learn-more:hover {
+  color: #0046b0;
+}
+
+.banking-digital-visual-col {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.banking-digital-phone-wrap {
+  position: relative;
+  z-index: 2;
+  width: min(var(--digital-phone-w), 72vw);
+  max-width: var(--digital-phone-w);
+  line-height: 0;
+  filter: drop-shadow(0 22px 44px rgba(15, 23, 42, 0.12));
+}
+
+.banking-digital-phone-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.banking-digital-features {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  text-align: left;
+}
+
+.banking-digital-feature-title {
+  margin: 0;
+  font-size: var(--showcase-title-size);
+  font-weight: var(--showcase-title-weight);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--digital-heading);
+}
+
+.banking-digital-feature-title-line {
+  display: block;
+}
+
+.banking-digital-feature-body {
+  margin: 1rem 0 0;
+  font-size: var(--showcase-body-size);
+  font-weight: 400;
+  line-height: var(--showcase-body-lh);
+  color: var(--digital-body);
+  max-width: 42ch;
+}
+
+.banking-digital-checklist {
+  list-style: none;
+  margin: 2.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.banking-digital-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.banking-digital-check-item--multiline {
+  align-items: flex-start;
+}
+
+.banking-digital-check-bullet {
+  display: flex;
+  width: 30px;
+  height: 32px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  line-height: 0;
+}
+
+.banking-digital-check-item--multiline .banking-digital-check-bullet {
+  margin-top: 0.2em;
+}
+
+.banking-digital-check-icon {
+  display: block;
+  width: 30px;
+  height: 32px;
+}
+
+.banking-digital-check-text {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--showcase-body-size);
+  font-weight: var(--showcase-list-weight);
+  line-height: 1.45;
+  color: var(--showcase-list-color);
+  letter-spacing: -0.01em;
+}
+
+.banking-digital-check-text-line {
+  display: block;
+}
+
+.banking-digital-check-text-line + .banking-digital-check-text-line {
+  margin-top: 0.125em;
+}
+
+@media (min-width: 1024px) {
+  .banking-digital-n7-svg {
+    left: 53%;
+    top: 0;
+    width: min(100vw, 1380px);
+    transform: translate(-49%, 0);
+  }
+
+  .banking-digital-grid {
+    grid-template-columns: minmax(0, 1fr) var(--digital-phone-w) minmax(0, 1fr);
+    column-gap: var(--digital-gap);
+    row-gap: 0;
+    align-items: start;
+    min-height: clamp(560px, 44vw, 640px);
+  }
+
+  .banking-digital-copy {
+    justify-self: start;
+    max-width: 440px;
+  }
+
+  .banking-digital-headline {
+    font-size: clamp(3rem, 4.5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: none;
+  }
+
+  .banking-digital-subheadline {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.55;
+    max-width: 36ch;
+  }
+
+  .banking-digital-cta-stack {
+    margin-top: 2.25rem;
+    gap: 1.125rem;
+  }
+
+  .banking-digital-visual-col {
+    justify-self: center;
+    align-self: center;
+    width: var(--digital-phone-w);
+    min-height: auto;
+  }
+
+  .banking-digital-phone-wrap {
+    width: var(--digital-phone-w);
+  }
+
+  .banking-digital-features {
+    justify-self: end;
+    max-width: 400px;
+  }
+
+  .banking-digital-feature-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    max-width: 22ch;
+  }
+
+  .banking-digital-feature-body {
+    margin-top: 1rem;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 42ch;
+  }
+
+  .banking-digital-checklist {
+    margin-top: 2.5rem;
+    gap: 1.25rem;
+    max-width: 400px;
+  }
+
+  .banking-digital-check-text {
+    font-size: var(--showcase-list-size);
+    font-weight: var(--showcase-list-weight);
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+  }
+
+  .banking-digital-check-item--multiline .banking-digital-check-bullet {
+    margin-top: 0.15em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .banking-digital-headline {
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  .banking-digital-subheadline {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
+  .banking-digital-n7-svg {
+    left: 39%;
+    width: min(98vw, 1200px);
+    transform: translate(-48%, 0);
+    top: -2vh;
+  }
+}
+
+@media (max-width: 1023px) {
+  .banking-digital-grid {
+    grid-template-areas:
+      "copy"
+      "visual"
+      "features";
+  }
+
+  .banking-digital-copy {
+    grid-area: copy;
+    max-width: none;
+  }
+
+  .banking-digital-visual-col {
+    grid-area: visual;
+    min-height: clamp(340px, 75vw, 480px);
+  }
+
+  .banking-digital-features {
+    grid-area: features;
+    max-width: none;
+  }
+}

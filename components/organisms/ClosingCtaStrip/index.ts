@@ -1,0 +1,1 @@
+export { ClosingCtaStrip } from "./ClosingCtaStrip";

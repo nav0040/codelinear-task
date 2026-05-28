@@ -1,0 +1,1 @@
+export { BankingInsightsSection } from "./BankingInsightsSection";

@@ -1,0 +1,1 @@
+export { KycBenefitsContent } from "./KycBenefitsContent";

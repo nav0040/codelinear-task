@@ -1,0 +1,1 @@
+export { InsightsBoard } from "./InsightsBoard";

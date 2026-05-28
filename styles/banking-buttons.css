@@ -1,0 +1,66 @@
+
+.banking-btn-outline-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 44px;
+  padding: 0 1.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  background: transparent;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  transition:
+    color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.banking-btn-outline-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 62%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.banking-btn-outline-cta:hover {
+  background: #ebf2f7;
+  border-color: rgba(235, 242, 247, 0.6);
+  color: #1a4dbe;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 10px 36px rgba(0, 163, 255, 0.22),
+    0 0 0 1px rgba(235, 242, 247, 0.12);
+}
+
+.banking-btn-outline-cta:hover::before {
+  transform: translateX(120%);
+}
+
+.banking-btn-outline-cta--rounded {
+  border-radius: 10px;
+  padding-inline: 1.625rem;
+}
+
+.banking-btn-outline-cta--block {
+  width: 100%;
+  min-height: 48px;
+}

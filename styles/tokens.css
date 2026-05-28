@@ -1,0 +1,70 @@
+:root {
+  --background: #fafafa;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --accent: #eef2ff;
+  --accent-foreground: #4338ca;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --ring: #6366f1;
+  --radius: 0.625rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  --site-shell-max: 1520px;
+  --site-gutter: clamp(1rem, 2.5vw, 1.5rem);
+
+  --space-section-y: clamp(4rem, 8vw, 7rem);
+  --space-block: clamp(1.25rem, 3vw, 2rem);
+
+  --text-display: clamp(2.25rem, 5.5vw + 0.5rem, 4.5rem);
+  --text-title: clamp(1.75rem, 3.2vw + 0.25rem, 3rem);
+  --text-body: clamp(0.9375rem, 1.1vw + 0.5rem, 1.0625rem);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --site-gutter: clamp(1.125rem, 2vw, 1.5rem);
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --site-shell-max: 1520px;
+    --site-gutter: 1.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #09090b;
+    --foreground: #fafafa;
+    --card: #18181b;
+    --card-foreground: #fafafa;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --border: #27272a;
+    --input: #27272a;
+    --primary: #818cf8;
+    --primary-foreground: #09090b;
+    --secondary: #27272a;
+    --secondary-foreground: #fafafa;
+    --accent: #312e81;
+    --accent-foreground: #c7d2fe;
+    --destructive: #f87171;
+    --destructive-foreground: #09090b;
+    --ring: #818cf8;
+  }
+}

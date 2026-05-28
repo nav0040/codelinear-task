@@ -1,0 +1,16 @@
+export { BankingNavbar } from "./BankingNavbar";
+export { BankingFooter } from "./BankingFooter";
+export { BankingMarquee } from "./BankingMarquee";
+export { BankingHeroSection } from "./BankingHeroSection";
+export { BankingFeaturesSection } from "./BankingFeaturesSection";
+export { BankingCoreBankingSection } from "./BankingCoreBankingSection";
+export { BankingKycBenefitsSection } from "./BankingKycBenefitsSection";
+export { BankingCtaSection } from "./BankingCtaSection";
+export { BankingMarqueeSection } from "./BankingMarqueeSection";
+export { BankingDigitalBankingSection } from "./BankingDigitalBankingSection";
+export { BankingNoLegacySection } from "./BankingNoLegacySection";
+export { BankingBranchlessSection } from "./BankingBranchlessSection";
+export { BankingPaperlessCtaSection } from "./BankingPaperlessCtaSection";
+export { BankingInsightsSection } from "./BankingInsightsSection";
+export { BankingCaseStudiesSection } from "./BankingCaseStudiesSection";
+export { BankingClosingCtaSection } from "./BankingClosingCtaSection";
