@@ -78,7 +78,7 @@ npm run lint
 
 ## Architecture — Atomic Design
 
-The codebase follows **[Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)**: small, reusable pieces compose into larger UI blocks, which compose into page sections, which compose into the full page template.
+The codebase follows Atomic Design: small, reusable pieces compose into larger UI blocks, which compose into page sections, which compose into the full page template.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
