@@ -22,22 +22,44 @@ The app is intentionally **one route** (`/`) so layout, copy, and assets stay ea
 | Styling | Tailwind CSS 4 + dedicated section CSS files |
 | Motion | Framer Motion |
 | UI primitives | Radix Slot, CVA, `clsx` / `tailwind-merge` |
-| Charts | Recharts (where used in showcase sections) |
 
-## Getting started
+## Setup
 
-### Prerequisites
+### 1. Prerequisites
 
-- **Node.js 20+** (LTS recommended)
-- **npm** (comes with Node)
+Install on your machine:
 
-### Install dependencies
+- [Node.js](https://nodejs.org/) **20 or newer** (LTS recommended)
+- **npm** (included with Node.js)
+
+Check versions:
+
+```bash
+node -v
+npm -v
+```
+
+### 2. Get the project
+
+Clone or download the repository, then open the project folder:
+
+```bash
+cd codelinear
+```
+
+Replace `codelinear` with your actual folder path if it differs.
+
+### 3. Install dependencies
+
+From the project root:
 
 ```bash
 npm install
 ```
 
-### Run in development
+This installs Next.js, React, Framer Motion, Tailwind CSS, and other packages listed in `package.json`.
+
+### 4. Run in development
 
 ```bash
 npm run dev
@@ -45,26 +67,41 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-If the dev server behaves oddly after large changes, use a clean cache:
+The page includes a preloader on first load; wait for it to finish to see the full hero and animations.
+
+**Clean dev start** (if styles or routes look stale after big changes):
 
 ```bash
 npm run dev:clean
 ```
 
-### Production build
+### 5. Production build
+
+Build and run the optimized app:
 
 ```bash
 npm run build
 npm run start
 ```
 
-`npm run start` serves the production build (default port **3000**).
+Production server runs at [http://localhost:3000](http://localhost:3000) by default.
 
-### Lint
+### 6. Lint (optional)
 
 ```bash
 npm run lint
 ```
+
+### Troubleshooting
+
+| Issue | What to try |
+|-------|-------------|
+| Port 3000 in use | Stop the other process or run `npm run dev -- -p 3001` |
+| CSS / import errors after pull | `rm -rf .next && npm run dev` or `npm run dev:clean` |
+| `npm install` fails | Use Node 20+, delete `node_modules` and `package-lock.json`, then `npm install` again |
+| Blank or 500 on first load | Restart the dev server after installing dependencies |
+
+No `.env` file is required — the landing page runs with defaults only.
 
 ## Scripts
 
@@ -106,7 +143,6 @@ The codebase follows Atomic Design: small, reusable pieces compose into larger U
 - `components/ui/` — shared shadcn-style primitives (e.g. `Button`, `MagneticButton`)
 - `constants/` — copy, nav, footer, features, asset URLs
 - `styles/` — per-section CSS imported from `app/globals.css`
-- `hooks/` — shared hooks (e.g. `useMediaQuery`)
 - `public/images/` — static images and SVGs
 
 ### Data flow
@@ -154,7 +190,6 @@ codelinear/
 │   ├── animations/
 │   └── ui/
 ├── constants/                  # Copy & configuration
-├── hooks/
 ├── public/images/              # Static assets
 ├── styles/                     # Section CSS (banking-hero, banking-footer, …)
 └── package.json
