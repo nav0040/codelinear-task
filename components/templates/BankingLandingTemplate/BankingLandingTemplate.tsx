@@ -20,7 +20,7 @@ import { ASSETS } from "@/constants/assets";
 export function BankingLandingTemplate() {
   return (
     <div className="relative z-[1] w-full">
-      <div className="sticky top-0 z-[110]">
+      <div className="sticky top-0 z-[110] overflow-visible">
         <BankingNavbar />
       </div>
       <BankingHeroSection />

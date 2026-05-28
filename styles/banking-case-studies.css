@@ -372,9 +372,60 @@
 }
 
 @media (max-width: 639px) {
+  .banking-case-root {
+    --case-card-h: clamp(500px, 122vw, 560px);
+    --case-visual-size: min(220px, calc(100vw - 4rem));
+  }
+
+  .banking-case-stage-wrap {
+    padding-inline: var(--site-gutter);
+  }
+
+  .banking-case-stage {
+    max-width: 100%;
+  }
+
+  .banking-case-slide {
+    width: 100%;
+  }
+
+  .banking-case-card {
+    overflow: hidden;
+  }
+
+  .banking-case-card-inner {
+    height: auto;
+    min-height: 100%;
+    gap: 0.875rem;
+    padding: 1rem 1rem 1rem;
+  }
+
+  .banking-case-visual {
+    width: var(--case-visual-size);
+    height: var(--case-visual-size);
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .banking-case-card-title {
+    font-size: 1.0625rem;
+    line-height: 1.4;
+  }
+
+  .banking-case-brand {
+    margin-top: 0.75rem;
+  }
+
+  .banking-case-card-footer {
+    padding-top: 0.625rem;
+  }
+
   .banking-case-controls {
     grid-template-columns: 1fr;
     justify-items: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    padding-inline: var(--site-gutter);
   }
 
   .banking-case-controls-nav {
